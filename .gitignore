@@ -1,0 +1,77 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+*.aab
+
+# Built files from Gradle
+build/
+.gradle/
+**/build/
+**/out/
+
+# Local configuration file (e.g., SDK paths)
+local.properties
+
+# Keystore files (sensitive signing information)
+*.jks
+*.keystore
+*.pk8
+*.der
+
+# Android Studio files
+.idea/
+*.iml
+.navigation/
+captures/
+**/*.navigation
+
+# IntelliJ project files (if using other IDEs)
+*.ipr
+*.iws
+
+# Gradle cache and daemon
+gradle-app.setting
+.gradle/
+!gradle-wrapper.jar
+**/gradle/wrapper/gradle-wrapper.properties
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+._*
+*.swp
+*.swo
+
+# Log/IDE files
+*.log
+**/log/
+**/logs/
+
+# Firebase debug view (if used)
+debuglog/
+
+# Fastlane (if used)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Crashlytics (if used)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+# Temporary files
+*.orig
+*.rej
+*.bak
+
+# NDK (if not using)
+obj/
+.externalNativeBuild/
+.cxx/
+
+# Google Services (e.g., google-services.json - use environment-specific versions)
+# (Uncomment if you don't commit environment-specific configs)
+# app/google-services.json
