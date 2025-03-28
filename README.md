@@ -17,3 +17,8 @@ rm -rf ~/.gradle/caches/transforms-*
 ```
 ./gradlew clean assembleDebug
 ```
+
+### Tree without gitignore files
+```
+tree -I "$(grep -vE '^#|^!' .gitignore | sed '/^$/d' | tr '\n' '|' | sed 's/|$//')"
+```

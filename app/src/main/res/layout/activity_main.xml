@@ -2,11 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/sensorData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sensor data will appear here" />
+        android:text="Accelerometer Data"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/accelerometerData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X: 0.00\nY: 0.00\nZ: 0.00"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gyroscope Data"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/gyroscopeData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X: 0.00\nY: 0.00\nZ: 0.00"
+        android:textSize="16sp"/>
+
 </LinearLayout>

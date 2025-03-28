@@ -23,6 +23,8 @@ pkgs.mkShell {
     pkgs.zlib
     pkgs.autoPatchelfHook
     pkgs.stdenv.cc.cc.lib
+
+    pkgs.tree
   ];
 
   # Fix for AAPT2 binary

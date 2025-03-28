@@ -12,14 +12,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private Sensor gyroscope;
-    private TextView sensorDataTextView;
+    private TextView accelerometerData;
+    private TextView gyroscopeData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sensorDataTextView = findViewById(R.id.sensorData);
+        accelerometerData = findViewById(R.id.accelerometerData);
+        gyroscopeData = findViewById(R.id.gyroscopeData);
+
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         gyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
@@ -40,17 +43,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        StringBuilder data = new StringBuilder();
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            data.append("Accelerometer:\nX: ").append(event.values[0])
-                .append("\nY: ").append(event.values[1])
-                .append("\nZ: ").append(event.values[2]);
+            String accelText = String.format("X: %.2f\nY: %.2f\nZ: %.2f",
+                    event.values[0], event.values[1], event.values[2]);
+            accelerometerData.setText(accelText);
         } else if (event.sensor.getType() == Sensor.TYPE_GYROSCOPE) {
-            data.append("Gyroscope:\nX: ").append(event.values[0])
-                .append("\nY: ").append(event.values[1])
-                .append("\nZ: ").append(event.values[2]);
+            String gyroText = String.format("X: %.2f\nY: %.2f\nZ: %.2f",
+                    event.values[0], event.values[1], event.values[2]);
+            gyroscopeData.setText(gyroText);
         }
-        sensorDataTextView.setText(data.toString());
     }
 
     @Override
